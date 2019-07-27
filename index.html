@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wisconsin</title>
+    <!-- Style sheet declarations -->
+    <link href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css' rel='stylesheet' />
+    <link href="./src/leaflet-sidebar.min.css" />
+    <link href="./style/app.css" rel="stylesheet" />
+    <!-- JS scripts declarations -->
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./src/leaflet-sidebar.min.js" <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js'></script>
+    <script src="./scripts/app.js"></script>
+</head>
+
+<body>
+    <!--    Insert map and sidebar divs-->
+    <div id="side-bar" class="col-mid-3">
+        <button id="btnLocate" class="btn btn-primary btn-block">Locate</button><br>
+    </div>
+    <div id="map" class="col-md-12"></div>
+    <nav class='menu-ui'>
+        <a href='#' class='active' data-filter='all'>Show all</a>
+        <a href='#' data-filter='Trout'>Trout</a>
+        <a href='#' data-filter='Steelhead'>Steelhead</a>
+        <a href='#' data-filter='Carp'>Carp</a>
+        <a href="#" data-filter="Smallmouth Bass">Smallmouth Bass</a>
+    </nav>
+
+</body>
+
+</html>
