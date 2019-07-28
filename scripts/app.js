@@ -23,11 +23,41 @@ $(document).ready(function() {
     lyrCreek = L.mapbox.styleLayer('mapbox://styles/budsuttree/cjxw63sdr03gj1cmy6y89ul89');
     lyrLabels = L.mapbox.styleLayer('mapbox://styles/budsuttree/cjxzb1lq71k3y1cob7ha24xw1');
     lyrSatellite = L.mapbox.styleLayer('mapbox://styles/mapbox/satellite-v9');
-    lyrSpotX = L.mapbox.featureLayer().loadURL('')
-    mymap.addLayer(lyrLabels);
+    lyrSpotX = L.mapbox.featureLayer().loadURL('https://raw.githubusercontent.com/jasparkatt/abv/grady-edits/src/data/SpotXX.geojson');
+    
+    $("#btnLocate").click(function() {
+        mymap.locate();
+    });
+
+
+    mymap.addLayer(lyrLabels);    
     
     objBasemaps = {
         "Hillshade":lyrRelief,
-        "Satellite":lyrSatellite
-    }
+        "Satellite":lyrSatellite,
+        "Labels":lyrLabels
+        // "Trout Streams":lyrCreek
+    };
+
+    objOverlays = {
+        "Trout Streams":lyrCreek,
+        "Spot X":lyrSpotX
+    };
+    
+    ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(mymap);
+
+    mymap.on('locationfound', function(e) {
+        console.log(e);
+        if (mrkCurrentLocation) {
+            mrkCurrentLocation.remove();
+        }
+        mrkCurrentLocation = L.circle(e.latlng, {radius:e.accuracy/2}).addTo(mymap);
+        mymap.setView(e.latlng, 14);
+    });
+
+    mymap.on('locationerror', function(e) {
+        console.log(e);
+        alert("Location was not found");
+    });
+   
 })
