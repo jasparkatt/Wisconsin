@@ -25,9 +25,14 @@ $(document).ready(function() {
     lyrSatellite = L.mapbox.styleLayer('mapbox://styles/mapbox/satellite-v9');
     lyrSpotX = L.mapbox.featureLayer().loadURL('https://raw.githubusercontent.com/jasparkatt/abv/grady-edits/src/data/SpotXX.geojson');
     
+    function xTrout() {
+        
+    }
+
     $("#btnLocate").click(function() {
         mymap.locate();
     });
+    $("btnTrout").click()
 
 
     mymap.addLayer(lyrLabels);    
