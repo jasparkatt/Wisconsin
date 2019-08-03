@@ -1,40 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Wisconsin</title>
-    <!-- Style sheet declarations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" integrity="sha256-YR4HrDE479EpYZgeTkQfgVJq08+277UXxMLbi/YP69o=" crossorigin="anonymous" />
+    <!-- map stuff -->
     <link href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- plugins -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.css' rel='stylesheet' />
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css' rel='stylesheet' />
-    <link href="./style/app.css" rel="stylesheet" />
-    <!-- JS scripts declarations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js" integrity="sha256-6BZRSENq3kxI4YYBDqJ23xg0r1GwTHEpvp3okdaIqBw=" crossorigin="anonymous"></script>
-    <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.standalone.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js'></script>
+    <link rel="stylesheet" href="./style/stuff.css">
+    <!-- Optional JavaScript -->
+    <!-- Mapbox leaflet, jQuery, then Popper.js, then Bootstrap JS -->
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="./scripts/app.js"></script>
-</head>
-
-<body>
-    <!--    Insert map and sidebar divs-->
-    <!-- this needs work...to say the least -->
-    <div class="row justify-content-between">
-        <div class="col-md-4"><button id="btnLocate" button type="button" class="btn btn-secondary">Locate</button>
-        </div>            
-    <div class="col-md-4">
-        <button id="btnTrout" button type="button" class="btn btn-secondary">Trout</button>
-        <button id="btnSteel" button type="button" class="btn btn-secondary">Steelhead</button>	
-        <button id="btnCarp" button type="button" class="btn btn-secondary">Carp</button>	
-        <button id="btnBass" button type="button" class="btn btn-secondary">Smallies</button>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-custom-2 navbar-expand-sm">
+      <a class="navbar-brand" href="#">
+          <img src="favicon.ico" width="30" height="30" alt="logo"> Central Sands Rambler
+      </a>
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-5" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div class="text-center" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-info">Left</button>
+          <button type="button" class="btn btn-info">Middle</button>
+          <button type="button" class="btn btn-info">Right</button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-list-5">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="fab fa-github btn fa-lg" href="https://github.com/jasparkatt/Storymaps" style="color:rgb(75, 47, 21)" target="_blank"></a>
+              </li>
+              <li class="nav-item">
+                  <i class="fas fa-info-circle btn fa-lg" data-toggle="modal" data-target="#info-modal" style="color:rgb(75, 47, 21)"></i>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <div class="modal fade" id="info-modal" role="dialog">
+      <div class="modal-dialog modal-md">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">About</h4>
+              </div>
+              <div class="modal-body">
+                  <p>The story map library is derived from the storymap plugin for leaflet at <a>http://atlefren.github.io/storymap/</a>, and its functionality relies on both leaflet and Boostrap.</p>
+                  <p><b>storymap.js</b> | Released Date: 02/20/2017 | Version: 2.5 | MIT License </p>
+                  <p><b>Author: Bo Zhao</b> | College of Earth, Ocean, Atmospheric Science | Oregon State University
+                  </p>
+                  <p>The context about wisconsin troutstreams was collected from Wikipedia, WDNR and jasparkatt.</p>
+                  <p>The <a href="https://www.youtube.com/watch?v=UJ_vQC9PNY4">background video</a> on the front page was clipped from Youtube. </p>
+                  <p>The favicon image was acquired from my imagination.</a>
+                  </p>
+                  <p>This story map uses geospatial data from mapbox, Google Earth Engine, ESRI Map, Open Street Maps and WDNR and the ramblers fishing notes and faulty memories.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="container-fluid">
+      <div id="map" class="col-md-12"></div>
+      
     </div>
-</div>
-    <div id="map" class="col-md-12"></div>
-</body>
+  </body>
 </html>
