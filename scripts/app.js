@@ -10,7 +10,7 @@ var ctlBasemaps;
 var ctlOverlays;
 
 //get public access token
-L.mapbox.accessToken = 'pk.eyJ1IjoiYnVkc3V0dHJlZSIsImEiOiJjanh6Y3R1dWYwMW82M2Nya3BiajFjYXRsIn0.KfnC6zslYrBhd4L0flo-WA';
+L.mapbox.accessToken = 'blbajhalhghe';
 //create map and overlays
 $(document).ready(function() {
     mymap = L.map('map', {
